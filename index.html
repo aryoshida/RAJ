@@ -1,19 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
     <title>Document</title>
 </head>
+
 <body>
-    
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Movie Suggestion app</h1>
+            <p class="lead">Type in any movie genre you would be interested in viewing tonight and we will provide
+                you
+                some examples!</p>
+        </div>
+    </div>
+
+    <form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
+        <input type="text" placeholder="Search.." name="search2">
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+
+    <div id="youtube_player">
+        <!-- needs a placeholder for youtube player -->
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div id="search_suggestions">
+                <table class="table table-borderless">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Movie Name:</th>
+                            <th scope="col">Synopsis:</th>
+                            <th scope="col">Youtube link:</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
 
     <script type="text/javascript" src="assets/javascript/logic.js"></script>
 
 </body>
+
 </html>
