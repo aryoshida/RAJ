@@ -23,14 +23,47 @@
         </div>
     </div>
 
-    <form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
+    <!-- <form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
         <input type="text" placeholder="Search.." name="search2">
         <button type="submit"><i class="fa fa-search"></i></button>
+    </form> -->
+
+
+    <form>
+        <div class="form-row align-items-center">
+            <div class="col-auto my-1">
+                <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+                <select class="custom-select mr-sm-2" id="genre-options">
+                    <option selected>Choose...</option>
+                    <option value="27">Horror</option>
+                    <option value="28">Action</option>
+                    <option value="18">Drama</option>
+                    <option value="35">Comedy</option>
+                    <option value="99">Documentary</option>
+                    <option value="10749">Romance</option>
+                    <option value="53">Thriller</option>
+                    <option value="878">Science Fiction</option>
+                </select>
+            </div>
+            <div class="col-auto my-1">
+                <div class="custom-control custom-checkbox mr-sm-2">
+                    <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
+                    <label class="custom-control-label" for="customControlAutosizing">Remember my preference</label>
+                </div>
+            </div>
+            <div class="col-auto my-1">
+                <button type="submit" class="btn btn-primary" id="genre-submit">Submit</button>
+            </div>
+        </div>
     </form>
 
+
+
     <div id="youtube_player">
-        <!-- needs a placeholder for youtube player -->
+
     </div>
+
+
 
     <div class="row">
         <div class="col-md-12">
@@ -40,6 +73,7 @@
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Movie Name:</th>
+                            <th scrope="col">Movie Poster:</th>
                             <th scope="col">Synopsis:</th>
                             <th scope="col">Youtube link:</th>
                         </tr>
