@@ -8,7 +8,7 @@ var config = {
   messagingSenderId: "18109117603"
 };
 firebase.initializeApp(config);
-=======
+
 $(document).ready(function(){
 
     $("#genre-submit").on("click", function(event){
@@ -52,4 +52,3 @@ $(document).ready(function(){
 
 
     });
->>>>>>> the-movie-database-api
