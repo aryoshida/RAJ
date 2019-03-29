@@ -1,3 +1,14 @@
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyCheLluXdaOQFsDgzUCAoIYa-fXdeorWaI",
+  authDomain: "raj-movie-picker.firebaseapp.com",
+  databaseURL: "https://raj-movie-picker.firebaseio.com",
+  projectId: "raj-movie-picker",
+  storageBucket: "raj-movie-picker.appspot.com",
+  messagingSenderId: "18109117603"
+};
+firebase.initializeApp(config);
+
 $(document).ready(function(){
 
     $("#genre-submit").on("click", function(event){
@@ -42,3 +53,4 @@ $(document).ready(function(){
 
 
     });
+
