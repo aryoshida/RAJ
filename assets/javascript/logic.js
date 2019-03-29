@@ -34,12 +34,13 @@ $(document).ready(function(){
                 var movieSynopsis = response.results[i].overview;
 
                 var newRow = $("<tr>").append(
+                    $("<td>").text(""),
                     $("<td>").text(movieName),
-                    $("<td>").text(moviePoster),
+                    $("<td>").text("moviePoster"),
                     $("<td>").text(movieSynopsis)
                 );
 
-                $("")
+                $("#movie-table > tbody").append(newRow);
 
             }
 
