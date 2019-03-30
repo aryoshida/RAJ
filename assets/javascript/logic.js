@@ -10,6 +10,14 @@ var config = {
 firebase.initializeApp(config);
 
 $(document).ready(function() {
+  $("#age-submit").on("click", function(close) {
+    event.preventDefault();
+    $("#form-popup").hide();
+    close();
+  });
+});
+
+$(document).ready(function() {
   $("#genre-submit").on("click", function(event) {
     event.preventDefault();
 

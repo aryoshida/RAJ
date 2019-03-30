@@ -1,28 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="assets/css/agecheck.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-  <!--Firebase Script-->
-  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+    <!--Firebase Script-->
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
 
-  <title>Document</title>
-</head>
+<script>
 
-<body>
-  <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <h1 class="display-4">Movie Suggestion app</h1>
-      <p class="lead">
-        Type in any movie genre you would be interested in viewing tonight and
-        we will provide you some examples!
-      </p>
+  function ageVerify() {
+    // Get the checkbox
+    var checkBox = document.getElementById("myCheck");
+    // Get the output text
+    var text = document.getElementById("text");
+
+    // If the checkbox is checked, display the output text
+    if (checkBox.checked == true) {
+      text.style.display = "block";
+    } else {
+      text.style.display = "none";
+    }
+  }
+
+</script>
+
+
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Movie Suggestion app</h1>
+        <p class="lead">
+          Type in any movie genre you would be interested in viewing tonight and
+          we will provide you some examples!
+        </p>     
+      </div>
+
     </div>
   </div>
 
@@ -31,32 +57,61 @@
         <button type="submit"><i class="fa fa-search"></i></button>
     </form> -->
 
-  <form>
-    <div class="form-row align-items-center">
-      <div class="col-auto my-1">
-        <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
-        <select class="custom-select mr-sm-2" id="genre-options">
-          <option selected>Choose...</option>
-          <option value="27">Horror</option>
-          <option value="28">Action</option>
-          <option value="18">Drama</option>
-          <option value="35">Comedy</option>
-          <option value="99">Documentary</option>
-          <option value="10749">Romance</option>
-          <option value="53">Thriller</option>
-          <option value="878">Science Fiction</option>
-        </select>
-      </div>
-      <div class="col-auto my-1">
-        <div class="custom-control custom-checkbox mr-sm-2">
-          <input type="checkbox" class="custom-control-input" id="customControlAutosizing" />
-          <label class="custom-control-label" for="customControlAutosizing">Remember my preference</label>
-        </div>
-      </div>
-      <div class="col-auto my-1">
-        <button type="submit" class="btn btn-primary" id="genre-submit">
+    <!-- Age Verification -->
+<div id='form-popup' class='popup' >
+  <div class='cnt223'>
+    <h1>Please Verify Your Age</h1>
+    <p>
+      Enter your age below.
+      <form>
+        <input type="checkbox" name="age-approved" value="Age" onclick="ageVerify()"> I am 18 years old or older.
+        <br>
+        <button type="submit" class="btn btn-primary" id="age-submit">
           Submit
         </button>
+           
+      </form>
+              <br />
+              <br />
+              <a href='' class='close'>Close</a>
+        </p>
+      </div>
+    </div>
+    
+    <form>
+      <div class="form-row align-items-center">
+        <div class="col-auto my-1">
+          <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect"
+            >Preference</label
+          >
+          <select class="custom-select mr-sm-2" id="genre-options">
+            <option selected>Choose...</option>
+            <option value="27">Horror</option>
+            <option value="28">Action</option>
+            <option value="18">Drama</option>
+            <option value="35">Comedy</option>
+            <option value="99">Documentary</option>
+            <option value="10749">Romance</option>
+            <option value="53">Thriller</option>
+            <option value="878">Science Fiction</option>
+          </select>
+        </div>
+        <div class="col-auto my-1">
+          <div class="custom-control custom-checkbox mr-sm-2">
+            <input
+              type="checkbox"
+              class="custom-control-input"
+              id="customControlAutosizing"
+            />
+            <label class="custom-control-label" for="customControlAutosizing"
+              >Remember my preference</label
+            >
+          </div>
+        </div>
+        <div class="col-auto my-1">
+          <button type="submit" class="btn btn-primary" id="genre-submit">
+            Submit
+          </button>
       </div>
     </div>
   </form>
@@ -106,9 +161,9 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
-
+<script src="assets/javascript/age.js"></script>
   <script src="assets/javascript/logic.js"></script>
   <script src="assets/javascript/youtube.js"></script>
 </body>
-
 </html>
+

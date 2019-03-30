@@ -28,6 +28,17 @@ function onClickAttach() {
 
     //show the video on the page
     function loadVid(youtubeId) {
+
+      $("#video").html(`
+        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/${youtubeId}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+          </div>
+        </div>
+        `);
+
       $('#youtube-popup').modal('toggle')
 
       $("#youtube_player").html(
