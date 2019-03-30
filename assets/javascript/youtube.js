@@ -1,7 +1,7 @@
 //get movie choice
 
 function onClickAttach() {
-  $(".movieButton").click(function() {
+  $(".movieButton").click(function () {
     // alert("Handler for .click() called.");
     console.log($(this).attr("data-movie"));
     var movieChoice = $(this).attr("data-movie");
@@ -19,7 +19,7 @@ function onClickAttach() {
         movieChoice +
         "+trailer" +
         "&key=AIzaSyA3zrBVpNgpIXLtpW4osabzm73W9gVZV38"
-    }).then(function(response) {
+    }).then(function (response) {
       console.log(response);
       //get from the response the video id
       var youtubeId = response.items[0].id.videoId;
@@ -28,6 +28,7 @@ function onClickAttach() {
 
     //show the video on the page
     function loadVid(youtubeId) {
+
       $("#video").html(`
         <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-lg">
@@ -37,8 +38,17 @@ function onClickAttach() {
           </div>
         </div>
         `);
+
+      $('#youtube-popup').modal('toggle')
+
+      $("#youtube_player").html(
+
+        `<iframe width="100%" height="500" src="https://www.youtube.com/embed/${youtubeId}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+      );
     }
+
   });
+
 }
 
 //These are the links where I got my information:
