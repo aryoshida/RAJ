@@ -46,6 +46,10 @@ function onClickAttach() {
         `<iframe width="100%" height="500" src="https://www.youtube.com/embed/${youtubeId}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
       );
     }
+    //added following code to prevent the video from continuing to play in the background after the modal window was hidden.
+    $('#youtube-popup').on('hidden.bs.modal', function () {
+      $("#youtube-popup iframe").attr("src", $("#youtube-popup iframe").attr("src"));
+    })
 
   });
 
