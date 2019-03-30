@@ -15,8 +15,6 @@ $(document).ready(function() {
 
     var genre = $("#genre-options").val();
 
-    // const queryURL = "https://www.omdbapi.com/?t=" + genre + "&y&plot=short&apikey=d87f932b"
-
     const queryURL =
       "https://api.themoviedb.org/3/discover/movie?api_key=296e1114acd1d3cf0a434c3e81844983&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&with_genres=" +
       genre;
@@ -30,23 +28,52 @@ $(document).ready(function() {
 
       for (var i = 0; i < 5; i++) {
         var movieName = response.results[i].title;
-        var moviePoster =
-          "https://image.tmdb.org/t/p/w200" + response.results[i].poster_path;
+        var movieButton = $("<button>");
+          movieButton.attr("data-movie", movieName);
+          movieButton.addClass("movieButton btn btn-primary");
+          movieButton.text(movieName);        
+        var moviePoster ="https://image.tmdb.org/t/p/w200" + response.results[i].poster_path;
         var movieSynopsis = response.results[i].overview;
 
-        var button = $("<button>");
-        button.attr("data-movie", movieName);
-        button.addClass("movieButton btn btn-primary");
-        button.text(movieName);
-        var newRow = $("<tr>").append(
-          $("<td>").text(""),
-          $("<td>").html(button),
-          $("<td>").html("<img src = " + moviePoster + ">"),
-          $("<td>").text(movieSynopsis)
-        );
+        var containerElement = $("#cards-go-here");
 
-        $("#movie-table > tbody").append(newRow);
+        displayCard();
+
+        function displayCard(){
+
+          var cardElement = createCardElement(movieButton, moviePoster, movieSynopsis, movieName);
+          containerElement.prepend(cardElement);
+
+        }
+
+        function createCardElement(movieButton, moviePoster, movieSynopsis, movieName){
+          var cardElement = $("<div>");
+          cardElement.attr("class", "card");
+          cardElement.attr("class", "col-md-4");
+          
+          var cardImage = $("<img>");
+          cardImage.attr("src", moviePoster);
+          cardElement.append(cardImage);
+
+          var cardBody = $("<div>");
+          cardBody.attr("class", "card-body");
+          cardElement.append(cardBody);
+
+          var cardTitle = $("<h5>");
+          cardTitle.attr("class", "card-title");
+          cardTitle.html(movieButton);
+          cardElement.append(cardTitle);
+
+          var cardText = $("<p>");
+          cardText.attr("class", "card-text");
+          cardText.html(movieSynopsis);
+          cardBody.append(cardText);
+
+          return cardElement;
+        }
+
       }
+      onClickAttach();
     });
   });
 });
