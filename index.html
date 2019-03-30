@@ -12,8 +12,29 @@
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="assets/css/agecheck.css" />
+
     <!--Firebase Script-->
     <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+
+<script>
+
+  function ageVerify() {
+    // Get the checkbox
+    var checkBox = document.getElementById("myCheck");
+    // Get the output text
+    var text = document.getElementById("text");
+
+    // If the checkbox is checked, display the output text
+    if (checkBox.checked == true) {
+      text.style.display = "block";
+    } else {
+      text.style.display = "none";
+    }
+  }
+
+</script>
+
 
     <title>Document</title>
   </head>
@@ -25,7 +46,7 @@
         <p class="lead">
           Type in any movie genre you would be interested in viewing tonight and
           we will provide you some examples!
-        </p>
+        </p>     
       </div>
     </div>
 
@@ -33,6 +54,31 @@
         <input type="text" placeholder="Search.." name="search2">
         <button type="submit"><i class="fa fa-search"></i></button>
     </form> -->
+
+
+    <!-- Age Verification -->
+<div id='form-popup' class='popup' >
+  <div class='cnt223'>
+    <h1>Please Verify Your Age</h1>
+    <p>
+      Enter your age below.
+      <form>
+        <input type="checkbox" name="age-approved" value="Age" onclick="ageVerify()"> I am 18 years old or older.
+        <br>
+        <button type="submit" class="btn btn-primary" id="age-submit">
+          Submit
+        </button>
+           
+      </form>
+              <br />
+              <br />
+              <a href='' class='close'>Close</a>
+        </p>
+      </div>
+    </div>
+    
+
+
 
     <form>
       <div class="form-row align-items-center">
@@ -106,6 +152,8 @@
 
     <!--Java Script-->
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script src="assets/javascript/age.js"></script>
+
     <script src="assets/javascript/logic.js"></script>
     <script src="assets/javascript/youtube.js"></script>
   </body>
