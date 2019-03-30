@@ -47,6 +47,7 @@ $(document).ready(function() {
 
         $("#movie-table > tbody").append(newRow);
       }
+      onClickAttach();
     });
   });
 });
