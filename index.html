@@ -8,8 +8,28 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+      <link rel="stylesheet" type="text/css" href="assets/css/agecheck.css" />
       <!--Firebase Script-->
       <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+
+      <script>
+
+        function ageVerify() {
+          // Get the checkbox
+          var checkBox = document.getElementById("myCheck");
+          // Get the output text
+          var text = document.getElementById("text");
+      
+          // If the checkbox is checked, display the output text
+          if (checkBox.checked == true) {
+            text.style.display = "block";
+          } else {
+            text.style.display = "none";
+          }
+        }
+      
+      </script>
+
     <title>Popcorn</title>
   </head>
 
@@ -23,6 +43,26 @@
               Type in any movie genre you would be interested in viewing tonight and
               we will provide you some examples!
             </p>
+        </div>
+
+        <div id='form-popup' class='popup' >
+          <div class='cnt223'>
+            <h1>Please Verify Your Age</h1>
+            <p>
+              Enter your age below.
+            <form>
+              <input type="checkbox" name="age-approved" value="Age" onclick="ageVerify()"> I am 18 years old or older.
+              <br>
+              <button type="submit" class="btn btn-primary" id="age-submit">
+                Submit
+              </button>
+             
+            </form>
+              <br />
+              <br />
+              <a href='' class='close'>Close</a>
+            </p>
+          </div>
         </div>
 
         <form>
@@ -86,9 +126,9 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
-
+<script src="assets/javascript/age.js"></script>
   <script src="assets/javascript/logic.js"></script>
   <script src="assets/javascript/youtube.js"></script>
 </body>
-
 </html>
+
