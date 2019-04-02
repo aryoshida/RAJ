@@ -9,16 +9,15 @@ var config = {
 };
 firebase.initializeApp(config);
 
-$(document).ready(function() {
-  $("#age-submit").on("click", function(close) {
+$(document).ready(function () {
+  $("#age-submit").on("click", function (close) {
     event.preventDefault();
     $("#form-popup").hide();
-    close();
   });
 });
 
-$(document).ready(function() {
-  $("#genre-submit").on("click", function(event) {
+$(document).ready(function () {
+  $("#genre-submit").on("click", function (event) {
     event.preventDefault();
 
     var genre = $("#genre-options").val();
@@ -30,35 +29,35 @@ $(document).ready(function() {
     $.ajax({
       url: queryURL,
       method: "GET"
-    }).then(function(response) {
+    }).then(function (response) {
       console.log(response);
       $("#genre-option").text(JSON.stringify(response));
 
       for (var i = 0; i < 5; i++) {
         var movieName = response.results[i].title;
         var movieButton = $("<button>");
-          movieButton.attr("data-movie", movieName);
-          movieButton.addClass("movieButton btn btn-primary");
-          movieButton.text(movieName);        
-        var moviePoster ="https://image.tmdb.org/t/p/w200" + response.results[i].poster_path;
+        movieButton.attr("data-movie", movieName);
+        movieButton.addClass("movieButton btn btn-primary");
+        movieButton.text(movieName);
+        var moviePoster = "https://image.tmdb.org/t/p/w200" + response.results[i].poster_path;
         var movieSynopsis = response.results[i].overview;
 
         var containerElement = $("#cards-go-here");
 
         displayCard();
 
-        function displayCard(){
+        function displayCard() {
 
           var cardElement = createCardElement(movieButton, moviePoster, movieSynopsis, movieName);
           containerElement.prepend(cardElement);
 
         }
 
-        function createCardElement(movieButton, moviePoster, movieSynopsis, movieName){
+        function createCardElement(movieButton, moviePoster, movieSynopsis, movieName) {
           var cardElement = $("<div>");
           cardElement.attr("class", "card");
           cardElement.attr("class", "col-md-4");
-          
+
           var cardImage = $("<img>");
           cardImage.attr("src", moviePoster);
           cardElement.append(cardImage);
