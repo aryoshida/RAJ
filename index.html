@@ -7,8 +7,9 @@
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
       <link rel="stylesheet" type="text/css" href="assets/css/agecheck.css" />
+      <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+
       <!--Firebase Script-->
       <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
 
@@ -36,33 +37,35 @@
   <body>
 
     <div class="wrapper">
+
+      <div id='form-popup' class='popup' >
+        <div class='cnt223'>
+          <h1>Please Verify Your Age</h1>
+          <p>
+            Enter your age below.
+          <form>
+            <input type="checkbox" name="age-approved" value="Age" onclick="ageVerify()"> I am 18 years old or older.
+            <br>
+            <button type="submit" class="btn btn-primary" id="age-submit">
+              Submit
+            </button>
+            
+          </form>
+            <br />
+            <br />
+            <a href='' class='close'>Close</a>
+          </p>
+        </div>
+      </div>
+
       <div class="container">
+
         <div class="jumbotron jumbotron-fluid">
             <h1 class="display-4">Movie Suggestion app</h1>
             <p class="lead">
               Type in any movie genre you would be interested in viewing tonight and
               we will provide you some examples!
             </p>
-        </div>
-
-        <div id='form-popup' class='popup' >
-          <div class='cnt223'>
-            <h1>Please Verify Your Age</h1>
-            <p>
-              Enter your age below.
-            <form>
-              <input type="checkbox" name="age-approved" value="Age" onclick="ageVerify()"> I am 18 years old or older.
-              <br>
-              <button type="submit" class="btn btn-primary" id="age-submit">
-                Submit
-              </button>
-             
-            </form>
-              <br />
-              <br />
-              <a href='' class='close'>Close</a>
-            </p>
-          </div>
         </div>
 
         <form>
@@ -101,18 +104,20 @@
 
         <div id="cards-go-here" class="row"></div>
 
+        <div id="youtube-popup" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+          aria-labelledby="myLargeModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div id="youtube_player"></div>
+            </div>
+          </div>
+        </div>
+
       </div>
 
     </div>
 
-  <div id="youtube-popup" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
-    aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div id="youtube_player"></div>
-      </div>
-    </div>
-  </div>
+
   <!--Temporary holder for Youtube search testing-->
 
   <!-- <div class="row" id="video">

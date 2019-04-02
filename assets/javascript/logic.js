@@ -33,7 +33,7 @@ $(document).ready(function () {
       console.log(response);
       $("#genre-option").text(JSON.stringify(response));
 
-      for (var i = 0; i < 5; i++) {
+      for (var i = 0; i < 6; i++) {
         var movieName = response.results[i].title;
         var movieButton = $("<button>");
         movieButton.attr("data-movie", movieName);

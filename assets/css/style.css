@@ -1,9 +1,30 @@
+body{
+    background-image: url(../images/cinema.jpg);
+}
+
 .wrapper{
     align-content: center;
     text-align: center;
-    /* background-image: url(../images/cinema.jpg); */
 }
 
-.card{
-    max-width: 200px;
+.container{
+    font-weight: bold;
+    color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
+
+.jumbotron{
+    background-color: rgba(1, 1, 54, 0.815);
+    margin: 30px;
+}
+
+.movieButton{
+    background-color: rgba(255, 0, 0, 0.897);
+    border: solid black;
+    height: 50px;
+}
+
